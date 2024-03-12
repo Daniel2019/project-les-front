@@ -1,0 +1,106 @@
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.header{
+    display: flex;
+    height: fit-content;
+    background-color: #312e81;
+    color: white;
+    align-items: center;
+    border-bottom: black solid 4px;
+    display: flex;
+
+    justify-content: baseline
+    ;
+
+    h1{
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    img{
+        width: 70px;
+        height: 70px;
+    }
+}
+
+main{
+    min-height: 100vh;
+    height: 100%;
+}
+
+.index{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: #111827;
+    align-items: center;
+
+    button{
+        margin-left: 8px;
+    }
+}
+
+.section{
+    display: flex;
+    height: 100%;
+}
+
+.navbar{
+    width: 10%;
+    min-height: 100vh;
+    background-color: #111827;
+    height:max-content;
+    align-items: baseline;
+
+    a{
+        color: white !important;
+    }
+}
+
+.content{
+    width: 90%;
+    padding-top: 16px;
+    padding-left: 8px;
+}
+
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+
+    button{
+        height: 35px;
+        margin-right: 8px;
+    }
+    
+}
+
+.filters{
+    margin-top: 16px;
+    width: 98%;
+}
+
+.list{
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cards{
+    width: 80%;
+}
+
+.buttons{
+    display: flex;
+    justify-content: end;
+    margin-right: 8px;
+
+    button{
+        margin-left: 8px;
+    }
+}

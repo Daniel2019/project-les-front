@@ -4,13 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../../packages/bootstrap-5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../index.css" rel="stylesheet">
+    <link href="./admin.css" rel="stylesheet">
+
     <script src="../../packages/bootstrap-5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../packages/jquery/jquery-3.7.1.min.js"></script>
     <title>Nerdoteca</title>
 </head>
 <body>
-    <h1>Admin</h1>
-    <a href="../index.html">Voltar</a>
+
+    <header class="header">
+        <img src="../assets/logo-nerdoteca.png" alt="">
+        <h1>Nerdoteca</h1>
+    </header>
+    
+    <main>
+        <section class="section">
+            <div class="navbar">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./admin.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./dashboard/dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="./livro/livro.html">Livros</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./usuarios/usuarios.html">Usuários</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./pedidos/pedidos.html">Pedidos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pedidos/pedidos.html">Logs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Sair</a>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="content">
+                <div class="header-content">
+                    <h2>Área do Adminstrador</h2>
+                </div>
+
+                <section>
+                    <div>
+                        <div class="row">
+                            <div class="col">
+                                <a href="./dashboard/dashboard.html">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                          <h5 class="card-title">Dashboard</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a href="./livro/livro.html">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                          <h5 class="card-title">Livros</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row mt-5">
+                            <div class="col">
+                                <a href="./usuarios/usuarios.html">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                          <h5 class="card-title">Usuários</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a href="./pedidos/pedidos.html">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                          <h5 class="card-title">Pedidos</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row mt-5">
+                            <div class="col">
+                                <a href="./log/log.html">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                          <h5 class="card-title">Logs</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+    
+    <footer></footer>
 
     <script src="./admin.js"></script>
 </body>
