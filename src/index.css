@@ -12,18 +12,17 @@ a{
     border-bottom: black solid 4px;
     display: flex;
 
-    justify-content: baseline
-    ;
+    justify-content: baseline;
+}
 
-    h1{
-        font-size: 16px;
-        margin-top: 10px;
-    }
+.header h1{
+    font-size: 16px;
+    margin-top: 10px;
+}
 
-    img{
-        width: 70px;
-        height: 70px;
-    }
+.header img{
+    width: 70px;
+    height: 70px;
 }
 
 main{
@@ -37,10 +36,10 @@ main{
     justify-content: center;
     background-color: #111827;
     align-items: center;
+}
 
-    button{
-        margin-left: 8px;
-    }
+.index button{
+    margin-left: 8px;
 }
 
 .section{
@@ -54,10 +53,10 @@ main{
     background-color: #111827;
     height:max-content;
     align-items: baseline;
+}
 
-    a{
-        color: white !important;
-    }
+.navbar a{
+    color: white !important;
 }
 
 .content{
@@ -70,12 +69,11 @@ main{
     display: flex;
     justify-content: space-between;
     font-size: 16px;
+}
 
-    button{
-        height: 35px;
-        margin-right: 8px;
-    }
-    
+.header-content button{
+    height: 35px;
+    margin-right: 8px;
 }
 
 .filters{
@@ -99,8 +97,8 @@ main{
     display: flex;
     justify-content: end;
     margin-right: 8px;
+}
 
-    button{
-        margin-left: 8px;
-    }
+.buttons button{
+    margin-left: 8px;
 }
