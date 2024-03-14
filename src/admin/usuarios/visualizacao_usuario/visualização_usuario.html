@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../../../packages/bootstrap-5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../index.css">
+    <link href="./visualizacao_usuario.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../../../assets/favicon.ico" type="image/x-icon">
+
+    <script src="../../../../packages/bootstrap-5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../../packages/jquery/jquery-3.7.1.min.js"></script>
+    <title>Nerdoteca</title>
+</head>
+<body>
+    
+    <header class="header">
+        <img src="../../../assets/logo-nerdoteca.png" alt="">
+        <h1>Nerdoteca</h1>
+    </header>
+    
+    <main>
+        <section class="section">
+            <div class="navbar" style="height: fit-content">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <a class="nav-link" href="../../admin.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="../../dashboard/dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="../../livros/livros.html">Livros</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="../../usuarios/usuarios.html">Usuários</a>
+                    </li>
+                    <li class="nav-item" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                      <a class="nav-link" >
+                        Pedidos
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                          <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                        </svg>
+                      </a>
+                    </li>
+                    <div class="collapse" id="collapseExample">
+                        <li class="nav-item">
+                          <a class="nav-link" href="../pedidos/pedidos.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                            </svg>
+                            Pedidos Realizados
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="../pedidos/pedidos.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                            </svg>
+                            Pedidos de Troca
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="../pedidos/pedidos.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                            </svg>
+                            Pedidos de Devolução
+                          </a>
+                        </li>
+                    </div>
+                    <li class="nav-item">
+                      <a class="nav-link" href="../../index.html">Sair</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="content">
+              <div class="header-content">
+                  <h2>Usuário</h2>
+                  <div>
+                    <a href="../usuarios.html">
+                      <button type="button" class="btn btn-secondary btn-sm rounded">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-90deg-left" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708z"/>
+                        </svg>
+                        Voltar
+                      </button>
+                    </a>
+                  </div>
+              </div>
+
+              <section>
+
+                <div>
+                    <form action="">
+                        
+                        <div>
+                            <h3>Informações de cadastro</h3>
+                        </div>
+
+                        <div>
+                            <h3>Endereços</h3>
+                        </div>
+
+                        <div>
+                            <h3>Formas de Pagamentos</h3>
+                        </div>
+
+                    </form>
+                </div>
+
+              </section>
+          </div>
+        </section>
+    </main>
+    
+    <footer></footer>
+
+    <script src="./visualizacao_usuario.js"></script>
+</body>
+</html>
