@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <title>Livraria Nerdoteca</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <style>
+            .card-img-top{
+                max-height: 410px;
+            }
+        </style>
+    </head>
+
+    <body>
+        
+        <!--CABECALHO-->
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><b>Nerdoteca</b></a>               
+                
+               
+            </div>
+        </nav>
+
+        <!--FORMULARIO-->
+
+       <div class="container">
+          <h1>
+            Criar conta
+          </h1>
+          <span><b>Dados cadastrais</b></span>
+          <form action="register.html" type="GET">
+            <div class="input-group mb-3 w-50">              
+                <input type="text" class="form-control  mb-3" id="nome" placeholder="Nome">
+                <input type="text" class="form-control  mb-3" id="sobrenome" placeholder="Sobrenome">
+            </div>
+
+            <div class="input-group mb-3 w-50"> 
+                
+                <input type="date" class="form-control  mb-3" id="dtnascimento" placeholder="23/10/1993">
+                <input type="text" class="form-control  mb-3" id="cpf" placeholder="CPF">
+                <select class="form-select mb-3" id="genero" >
+                  <option selected>Selecione o gênero</option>
+                  <option value="m">Masculino</option>
+                  <option value="f">Feminino</option>
+                  <option value="o">Outros</option>
+                </select>
+                
+
+            </div>
+
+            <span><b>            Dados de contato            </b></span>
+            <div class="input-group mb-3 w-50">              
+                <select class="form-select mb-3" id="tipocontato" >
+                  <option selected>Contato</option>
+                  <option value="m">Telefone</option>
+                  <option value="f">Celular</option>                  
+                </select>
+                <input type="text" class="form-control  mb-3" id="ddd" placeholder="DDD">
+                <input type="text" class="form-control  mb-3" id="telefone" placeholder="Número">
+            </div>
+
+            <span><b>Endereço</b></span>
+            <div class="input-group mb-3 w-50">
+              <input type="text" class="form-control  mb-3" id="logradouro" placeholder="Logradouro">
+              <input type="text" class="form-control  mb-3" id="numero" placeholder="Número">
+              <input type="text" class="form-control  mb-3" id="bairro" placeholder="Bairro">
+            </div>
+            <div class="input-group mb-3 w-50">
+                <input type="text" class="form-control  mb-3" id="cep" placeholder  ="CEP">
+                <input type="text" class="form-control  mb-3" id="cidade" placeholder="Cidade">
+                
+                <select name="estado" id="estado" class="form-select mb-3">
+                  <option value="">Estado</option> 
+                  <option value="AC">AC</option> 
+                  <option value="AL">AL</option> 
+                  <option value="AP">AP</option> 
+                  <option value="AM">AM</option> 
+                  <option value="BA">BA</option> 
+                  <option value="CE">CE</option> 
+                  <option value="ES">ES</option> 
+                  <option value="GO">GO</option> 
+                  <option value="MA">MA</option> 
+                  <option value="MT">MT</option> 
+                  <option value="MS">MS</option> 
+                  <option value="MG">MG</option> 
+                  <option value="PA">PA</option> 
+                  <option value="PB">PB</option> 
+                  <option value="PR">PR</option> 
+                  <option value="PE">PE</option> 
+                  <option value="PI">PI</option> 
+                  <option value="RJ">RJ</option> 
+                  <option value="RN">RN</option> 
+                  <option value="RS">RS</option> 
+                  <option value="RO">RO</option> 
+                  <option value="RR">RR</option> 
+                  <option value="SC">SC</option> 
+                  <option value="SP">SP</option> 
+                  <option value="SE">SE</option> 
+                  <option value="TO">TO</option> 
+                  <option value="DF">DF</option> 
+                </select>
+                <input type="text" class="form-control  mb-3" id="pais" placeholder="País">
+            </div>
+              
+            <span><b>Digite a senha</b></span>
+            <div class="input-group mb-3 w-50">
+              <input type="password" class="form-control  mb-3" id="senha" placeholder="**********">
+            </div>
+
+            <span><b>Confirme a senha</b></span>
+            <div class="input-group mb-3 w-50">
+              <input type="password" class="form-control  mb-3" id="confirmaSenha" placeholder="**********">
+            </div>
+            
+            <button type="submit" class="btn btn-success">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
+                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+                <path d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z"/>
+              </svg>
+              Cadastrar
+            </button>
+            
+          </form>
+
+       </div>
+
+        
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <span class="text-muted right">© 2024 Nerdoteca, Inc LTDA</span>
+            </div>
+        
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+            </ul>
+        </footer>
+            
+    </body>
+
+</html>
