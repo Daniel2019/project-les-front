@@ -48,7 +48,6 @@ main{
     height: 100vh;
     display: flex;
     justify-content: center;
-    background-color: #111827;
     align-items: center;
 }
 
@@ -116,4 +115,9 @@ main{
 
 .buttons button{
     margin-left: 8px;
+}
+
+footer {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
 }

@@ -49,25 +49,218 @@
                 </ul>
             </div>
     
-            <div class="content">
+            <div class="content ms-4">
                 <div class="header-content">
-                    <h2>Meus Dados</h2>
-                    <div>
-                        <a href="../../usuario.html">
-                          <button type="button" class="btn btn-secondary btn-sm rounded">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-90deg-left" viewBox="0 0 16 16">
-                              <path fill-rule="evenodd" d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708z"/>
-                            </svg>
-                            Voltar
-                          </button>
-                        </a>
-                    </div>
+                  <h2>Meus Dados</h2>
+                  <div>
+                    <a href="../../usuario.html">
+                      <button type="button" class="btn btn-secondary btn-sm rounded">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-arrow-90deg-left" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd"
+                            d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708z" />
+                        </svg>
+                        Voltar
+                      </button>
+                    </a>
+                  </div>
                 </div>
-    
+        
                 <section>
-
+        
+                  <div>
+                    <form action="">
+        
+                      <div>
+                        <div class="row me-2">
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">ID</label>
+                              <input type="" class="form-control" id="exampleFormControlInput1" placeholder="ID">
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">CPF</label>
+                              <input type="" class="form-control" id="exampleFormControlInput1" placeholder="CPF">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row me-2">
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Nome</label>
+                              <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Nome">
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Sobrenome</label>
+                              <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Sobrenome">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row me-2">
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Gênero</label>
+                              <select class="form-select" aria-label="Status">
+                                <option selected>Gênero</option>
+                                <option value="1">Masculino</option>
+                                <option value="2">Feminino</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Data de nascimento</label>
+                              <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="Data de nascimento">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row me-2">
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Status</label>
+                              <select class="form-select" aria-label="Status">
+                                <option selected>Status</option>
+                                <option value="1">Ativo</option>
+                                <option value="2">Inativo</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col">
+                            
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="mt-4">
+                        <h3>Endereço residencial</h3>
+                        <div class="row me-2">
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Nome do Endereço</label>
+                              <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Nome do Endereço">
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Tipo de residencia</label>
+                              <select class="form-select" aria-label="Tipo de residencia">
+                                <option value="1">Casa</option>
+                                <option value="2">Apartamento</option>
+                                <option value="2">Outro</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row me-2">
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">CEP</label>
+                              <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="CEP">
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Tipo de logradouro</label>
+                              <select class="form-select" aria-label="Tipo de logradouro">
+                                <option value="1">Rua</option>
+                                <option value="2">Avenida</option>
+                                <option value="2">Estrada</option>
+                                <option value="2">Outro</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row me-2">
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Logradouro</label>
+                              <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Logradouro">
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Numero</label>
+                              <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Numero">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row me-2">
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Bairro</label>
+                              <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Bairro">
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Cidade</label>
+                              <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Cidade">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row me-2">
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Estado</label>
+                              <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Estado">
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Pais</label>
+                              <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Pais">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row me-2">
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Observacoes</label>
+                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="mt-4">
+                        <h3>Telefone</h3>
+                        <div class="row me-2">
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Tipo</label>
+                              <select class="form-select" aria-label="Tipo">
+                                <option value="1">Residencial</option>
+                                <option value="2">Celular</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">DDD</label>
+                              <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="DDD">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row me-2">
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Numero</label>
+                              <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Numero">
+                            </div>
+                          </div>
+                          <div class="col">
+                          </div>
+                        </div>
+                      </div>        
+                    </form>
+                  </div>
+        
                 </section>
-            </div>
+              </div>
         </section>
 
         <!-- Modal Logout -->
@@ -87,7 +280,20 @@
         </div>
     </main>
 
-    <footer></footer>
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+          <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <span class="text-muted right">© 2024 Nerdoteca, Inc LTDA</span>
+      </div>
+  
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+      </ul>
+    </footer>
 
     <script src="./meus_dados.js"></script>
 </body>
