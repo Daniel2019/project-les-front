@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../../../packages/bootstrap-5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../index.css">
+    <link rel="stylesheet" href="./meus_dados.css">
+    <link rel="shortcut icon" href="../../../assets/favicon.ico" type="image/x-icon">
+
+    <script src="../../../../packages/bootstrap-5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../../packages/jquery/jquery-3.7.1.min.js"></script>
+    <title>Nerdoteca</title>
+</head>
+<body>
+
+    <header class="header">
+        <a href="../../../index.html">
+            <img src="../../../assets/logo-nerdoteca.png" alt="">
+            <h1>Nerdoteca</h1>
+        </a>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="navbar">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../usuario.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../meus_cartoes/meus_cartoes.html">Meus Cartões</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../meus_cupons/meus_cupons.html">Meus Cupons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../meus_enderecos/meus_enderecos.html">Meus Endereços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../meus_dados/meus_dados.html">Meus dados</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="../meus_pedidos/meus_pedidos.html">Meus Pedidos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalLogout">Sair</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="content">
+                <div class="header-content">
+                    <h2>Meus Dados</h2>
+                    <div>
+                        <a href="../../usuario.html">
+                          <button type="button" class="btn btn-secondary btn-sm rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-90deg-left" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708z"/>
+                            </svg>
+                            Voltar
+                          </button>
+                        </a>
+                    </div>
+                </div>
+    
+                <section>
+
+                </section>
+            </div>
+        </section>
+
+        <!-- Modal Logout -->
+        <div class="modal fade" id="modalLogout" tabindex="-1" aria-labelledby="modalLogout" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalLogout">Deseja realmente sair?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                    <button type="button" class="btn btn-primary" onclick="logout()">Sim</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <script src="./meus_dados.js"></script>
+</body>
+</html>
