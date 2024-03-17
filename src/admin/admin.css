@@ -1,0 +1,16 @@
+.home-options{
+    height: 100%;
+}
+
+.home-options .card{
+    height: 200px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.home-options .card-title{
+    font-weight: bold;
+    margin-top: 60px;
+}

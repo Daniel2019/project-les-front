@@ -1,241 +1,379 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../../../packages/bootstrap-5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../index.css" rel="stylesheet">
-    <link href="./livros.css" rel="stylesheet">
-    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../../packages/bootstrap-5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../index.css" rel="stylesheet">
+  <link href="./livros.css" rel="stylesheet">
+  <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
 
-    <script src="../../../packages/bootstrap-5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../../../packages/jquery/jquery-3.7.1.min.js"></script>
-    <title>Nerdoteca</title>
+  <script src="../../../packages/bootstrap-5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../../packages/jquery/jquery-3.7.1.min.js"></script>
+  <title>Nerdoteca</title>
 </head>
+
 <body>
-    
-    <header class="header">
-        <img src="../../assets/logo-nerdoteca.png" alt="">
-        <h1>Nerdoteca</h1>
-    </header>
-    
-    <main>
-        <section class="section">
-            <div class="navbar">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                      <a class="nav-link" href="../admin.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="../dashboard/dashboard.html">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active" href="../livro/livro.html">Livros</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="../usuarios/usuarios.html">Usuários</a>
-                    </li>
-                    <li class="nav-item" data-bs-toggle="collapse" data-bs-target="#collapsePedidos" aria-expanded="false" aria-controls="collapsePedidos">
-                      <a class="nav-link" >
-                        Pedidos
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                          <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-                        </svg>
-                      </a>
-                    </li>
-                    <div class="collapse" id="collapsePedidos">
-                        <li class="nav-item">
-                          <a class="nav-link" href="../pedidos/pedidos_devolucao/pedidos_devolucao.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                              <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
-                            </svg>
-                            Pedidos de Devolução
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="../pedidos/pedidos_realizados/pedidos_realizados.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                              <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
-                            </svg>
-                            Pedidos Realizados
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="../pedidos/pedidos_troca/pedidos_troca.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                              <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
-                            </svg>
-                            Pedidos de Troca
-                          </a>
-                        </li>
-                    </div>
-                    <li class="nav-item">
-                      <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalLogout">Sair</a>
-                    </li>
-                </ul>
-            </div>
 
-            <div class="content">
-              <div class="header-content">
-                  <h2>Livro</h2>
-                  <div>
-                    <a href="../admin.html">
-                      <button type="button" class="btn btn-secondary btn-sm rounded">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-90deg-left" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708z"/>
-                        </svg>
-                        Voltar
-                      </button>
-                    </a>
-                  </div>
-              </div>
+  <header class="header">
+    <img src="../../assets/logo-nerdoteca.png" alt="">
+    <h1>Nerdoteca</h1>
+  </header>
 
-              <section>
+  <main>
+    <section class="section">
+      <div class="navbar">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="../admin.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../dashboard/dashboard.html">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="../livro/livro.html">Livros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../usuarios/usuarios.html">Clientes</a>
+          </li>
+          <li class="nav-item" data-bs-toggle="collapse" data-bs-target="#collapsePedidos" aria-expanded="false"
+            aria-controls="collapsePedidos">
+            <a class="nav-link">
+              Pedidos
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                <path
+                  d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+              </svg>
+            </a>
+          </li>
+          <div class="collapse" id="collapsePedidos">
+            <li class="nav-item">
+              <a class="nav-link" href="../pedidos/pedidos_devolucao/pedidos_devolucao.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                </svg>
+                Pedidos de Devolução
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../pedidos/pedidos_realizados/pedidos_realizados.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                </svg>
+                Pedidos Realizados
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../pedidos/pedidos_troca/pedidos_troca.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                </svg>
+                Pedidos de Troca
+              </a>
+            </li>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalLogout">Sair</a>
+          </li>
+        </ul>
+      </div>
 
-                <div class="filters">
-                  <div class="row">
-                    <div class="col">
-                      <div class="mb-3">
-                        <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Titulo">
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="mb-3">
-                        <input type="" class="form-control" id="exampleFormControlInput1" placeholder="ISBN">
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="mb-3">
-                        <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Autor">
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="mb-3">
-                        <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Autor">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <div class="mb-3">
-                        <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Editora">
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="mb-3">
-                        <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Ano">
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="mb-3">
-                        <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Edição">
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="mb-3">
-                        <button type="button" class="btn btn-primary btn-sm rounded">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                          </svg>
-                          Consultar
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+      <div class="content ms-4">
+        <div class="header-content">
+          <h2>Livro</h2>
+          <div>
+            <a href="../admin.html">
+              <button type="button" class="btn btn-secondary btn-sm rounded">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-arrow-90deg-left" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708z" />
+                </svg>
+                Voltar
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <section>
+
+          <div class="filters">
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Titulo">
                 </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <input type="" class="form-control" id="exampleFormControlInput1" placeholder="ISBN">
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Autor">
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Numeros de Paginas">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Editora">
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Ano">
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Edição">
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <select class="form-select" aria-label="Status">
+                    <option selected>Status</option>
+                    <option value="1">Ativo</option>
+                    <option value="2">Inativo</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <button type="button" class="btn btn-primary btn-sm rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-search" viewBox="0 0 16 16">
+                      <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                    </svg>
+                    Consultar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-                <div>
-                  <h3>Consulta</h2>
-                  <div class="list">
-                      <div class="cards">
-                        <div class="card mb-3">
-                          <div class="row g-0">
-                            <div class="col-md-2">
-                              <img src="../../assets/livro01.jpeg" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-10">
-                              <div class="card-body">
-                                <h5 class="card-title">Livro 01</h5>
-                                <a href="./visualizacao_livro/visualizacao_livro.html">
-                                  <button type="button" class="btn btn-primary btn-sm rounded">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                                      <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
-                                      <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
-                                    </svg>
-                                    Visualizar
-                                  </button>
-                                </a>
-                                <button type="button" class="btn btn-warning btn-sm rounded" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-                                  </svg>
-                                  Inativar
-                                </button>
-                              </div>
-                            </div>
+          <div class="mt-2">
+            <h3>Livros Encontrados</h2>
+              <div class="list">
+                <div class="cards">
+                  <div class="card mb-3">
+                    <div class="row g-0">
+                      <div class="col-md-3">
+                        <img src="../../img/domcasmurro.png" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-9">
+                        <div class="card-body">
+                          <h5 class="card-title">Dom Casmurro</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            of the card's content.</p>
+                          <div class="card-text">
+                            <p>
+                              <b>ISBN:</b> 978 – 85 – 333 – 0227
+                              <br>
+                              <b>Status:</b>: ATIVO
+                              <br>
+                              <b>Quantidade Disponivel:</b> 200
+                            </p>
                           </div>
+                          <a href="./visualizacao_livro/visualizacao_livro.html">
+                            <button type="button" class="btn btn-primary btn-sm rounded">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-eye" viewBox="0 0 16 16">
+                                <path
+                                  d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
+                                <path
+                                  d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
+                              </svg>
+                              VISUALIZAR
+                            </button>
+                          </a>
+                          <button type="button" class="btn btn-warning btn-sm rounded" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                              class="bi bi-pencil-square" viewBox="0 0 16 16">
+                              <path
+                                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                              <path fill-rule="evenodd"
+                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                            </svg>
+                            INATIVAR
+                          </button>
                         </div>
                       </div>
-                      <div>
-                        <nav aria-label="Page navigation example">
-                          <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
-                          </ul>
-                        </nav>
+                    </div>
+                  </div>
+                  <div class="card mb-3">
+                    <div class="row g-0">
+                      <div class="col-md-3">
+                        <img src="../../img/foicemartelo.png" class="img-fluid rounded-start" alt="...">
                       </div>
+                      <div class="col-md-9">
+                        <div class="card-body">
+                          <h5 class="card-title">Superman</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            of the card's content.</p>
+                          <div class="card-text">
+                            <p>
+                              <b>ISBN:</b> 978 – 85 – 333 – 0227
+                              <br>
+                              <b>Status:</b>: ATIVO
+                              <br>
+                              <b>Quantidade Disponivel:</b> 200
+                            </p>
+                          </div>
+                          <a href="./visualizacao_livro/visualizacao_livro.html">
+                            <button type="button" class="btn btn-primary btn-sm rounded">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-eye" viewBox="0 0 16 16">
+                                <path
+                                  d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
+                                <path
+                                  d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
+                              </svg>
+                              VISUALIZAR
+                            </button>
+                          </a>
+                          <button type="button" class="btn btn-warning btn-sm rounded" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                              class="bi bi-pencil-square" viewBox="0 0 16 16">
+                              <path
+                                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                              <path fill-rule="evenodd"
+                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                            </svg>
+                            INATIVAR
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card mb-3">
+                    <div class="row g-0">
+                      <div class="col-md-3">
+                        <img src="../../img/crepusculo.jpg" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-9">
+                        <div class="card-body">
+                          <h5 class="card-title">Dom Casmurro</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            of the card's content.</p>
+                          <div class="card-text">
+                            <p>
+                              <b>ISBN:</b> 978 – 85 – 333 – 0227
+                              <br>
+                              <b>Status:</b>: ATIVO
+                              <br>
+                              <b>Quantidade Disponivel:</b> 200
+                            </p>
+                          </div>
+                          <a href="./visualizacao_livro/visualizacao_livro.html">
+                            <button type="button" class="btn btn-primary btn-sm rounded">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-eye" viewBox="0 0 16 16">
+                                <path
+                                  d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
+                                <path
+                                  d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
+                              </svg>
+                              VISUALIZAR
+                            </button>
+                          </a>
+                          <button type="button" class="btn btn-warning btn-sm rounded" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                              class="bi bi-pencil-square" viewBox="0 0 16 16">
+                              <path
+                                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                              <path fill-rule="evenodd"
+                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                            </svg>
+                            INATIVAR
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-      
-              </section>
-            </div>
-        </section>
-
-        <!-- Modal Logout -->
-        <div class="modal fade" id="modalLogout" tabindex="-1" aria-labelledby="modalLogout" aria-hidden="true">
-          <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="modalLogout">Deseja realmente sair?</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-                  <button type="button" class="btn btn-primary" onclick="logout()">Sim</button>
-              </div>
-          </div>
-          </div>
-        </div>
-
-        <!-- Modal Inativação ou Ativação -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Inativação ou Ativação Livro</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div class="mb-3">
-                  <label for="exampleFormControlTextarea1" class="form-label">Motivo Inativar ou Ativar</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <div>
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
+                    </ul>
+                  </nav>
                 </div>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Salvar</button>
-              </div>
-            </div>
+          </div>
+
+        </section>
+      </div>
+    </section>
+
+    <!-- Modal Logout -->
+    <div class="modal fade" id="modalLogout" tabindex="-1" aria-labelledby="modalLogout" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalLogout">Deseja realmente sair?</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+            <button type="button" class="btn btn-primary" onclick="logout()">Sim</button>
           </div>
         </div>
-    </main>
-    
-    <footer></footer>
+      </div>
+    </div>
 
-    <script src="./livros.js"></script>
+    <!-- Modal Inativação ou Ativação -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Inativação ou Ativação Livro</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Motivo Inativar ou Ativar</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Salvar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer></footer>
+
+  <script src="./livros.js"></script>
 </body>
+
 </html>
