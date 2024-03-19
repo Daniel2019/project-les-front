@@ -16,7 +16,7 @@
         <!--CABECALHO-->
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html"><b>Nerdoteca</b></a>               
+                <a class="navbar-brand" href="../../../index.html"><b>Nerdoteca</b></a>               
                 
                <h2>Finalizar a compra </h2>
                 <form action="cadastro.html">
@@ -60,7 +60,7 @@
                 <h5>Resumo do pedido</h5><br>
                 <p><b>Itens: </b>R$100</p>
                 <p><b>Frete: </b> grátis</p>
-                <button onclick="alert('Compra efetuada com sucesso!')" type="button" class="btn btn-warning">Fechar pedido</button>
+                <button onclick="logout()" type="button" class="btn btn-warning">Fechar pedido</button>
 
 
               </div>
@@ -92,4 +92,10 @@
             
     </body>
 
+    <script>
+      function logout() {
+        alert('Compra efetuada com sucesso!')
+        window.location.href = "/src/usuario/compra/confirmacao.html";
+      }
+    </script>
 </html>
