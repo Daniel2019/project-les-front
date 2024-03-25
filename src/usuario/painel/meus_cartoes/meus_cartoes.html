@@ -66,83 +66,8 @@
     
                 <section>
                     <div class="me-4 mt-2">
-
-                        <div>
-                            <div class="card">
-                                <div class="card-body" data-bs-toggle="collapse" data-bs-target="#collapseCartao" aria-expanded="false"
-                                aria-controls="collapseCartao">
-                                    <h4>
-                                      Meu Cartão 1
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                                        <path
-                                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                                      </svg>
-                                    </h4>
-                                </div>
-                                <div class="card-body collapse" id="collapseCartao">
-                                    <div>
-                                        <div>
-                                            <div class="row me-2">
-                                                <div class="col">
-                                                  <div class="mb-3">
-                                                    <label for="formFile" class="form-label">Número do Cartão</label>
-                                                    <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Número do Cartão">
-                                                  </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="mb-3">
-                                                      <label for="formFile" class="form-label">Marca do Cartão</label>
-                                                      <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Marca do Cartão">
-                                                    </div>
-                                                </div>
-                                              </div>
-                                              <div class="row me-2">
-                                                <div class="col">
-                                                  <div class="mb-3">
-                                                    <label for="formFile" class="form-label">CVC</label>
-                                                    <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="CVC">
-                                                  </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="mb-3">
-                                                      <label for="formFile" class="form-label">Validade</label>
-                                                      <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Validade">
-                                                    </div>
-                                                </div>
-                                              </div>
-                                              <div class="row me-2">
-                                                <div class="col">
-                                                  <div class="mb-3">
-                                                    <label for="formFile" class="form-label">Nome do Titular</label>
-                                                    <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Nome do Titular">
-                                                  </div>
-                                                </div>
-                                                <div class="col">
-                                                  <div class="mb-3">
-                                                    <label for="formFile" class="form-label">CPF do Titular</label>
-                                                    <input type="" class="form-control" id="exampleFormControlInput1" placeholder="CPF do Titular">
-                                                  </div>
-                                                </div>
-                                              </div>
-                                              <div class="row me-2">
-                                                <div class="col">
-                                                  <div class="mb-3">
-                                                    <label for="formFile" class="form-label">Observações</label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                        </div>
-                                    </div>
-                                    <div class="buttons">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                        <button type="button" class="btn btn-primary">Salvar</button>
-                                    </div>
-                                </div>
-                            </div>
-    
-                            <div class="card mt-4">
+                        <div id="listaDeCartoes">
+                            <!-- <div class="card mt-4">
                                 <div class="card-body" data-bs-toggle="collapse" data-bs-target="#collapseCartao2" aria-expanded="false"
                                 aria-controls="collapseCartao">
                                   <h4>
@@ -208,15 +133,19 @@
                                           </div>
                                     </div>
                                     <div class="buttons">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="button button-trash" class="btn btn-secondary text-center" onclick="deletarCartao(${idDoCartao})">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash2-fill" viewBox="0 0 16 16">
+                                            <path d="M2.037 3.225A.7.7 0 0 1 2 3c0-1.105 2.686-2 6-2s6 .895 6 2a.7.7 0 0 1-.037.225l-1.684 10.104A2 2 0 0 1 10.305 15H5.694a2 2 0 0 1-1.973-1.671zm9.89-.69C10.966 2.214 9.578 2 8 2c-1.58 0-2.968.215-3.926.534-.477.16-.795.327-.975.466.18.14.498.307.975.466C5.032 3.786 6.42 4 8 4s2.967-.215 3.926-.534c.477-.16.795-.327.975-.466-.18-.14-.498-.307-.975-.466z"/>
+                                          </svg>
+                                        </button>
                                         <button type="button" class="btn btn-primary">Salvar</button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="buttons mt-12" style="margin-top: 24px;">
-                            <button type="button" class="btn btn-primary">
+                            <button type="button" class="btn btn-primary" onclick="adicionarDivDeNovoCartao()">
                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
                                 <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
                                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
