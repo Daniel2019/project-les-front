@@ -75,46 +75,42 @@
                         <div class="row me-2">
                           <div class="col">
                             <div class="mb-3">
-                              <label for="formFile" class="form-label">ID</label>
-                              <input type="" class="form-control" id="exampleFormControlInput1" placeholder="ID">
+                              <label for="id" class="form-label">ID</label>
+                              <input type="number" class="form-control" id="id" placeholder="ID" readonly>
                             </div>
                           </div>
                           <div class="col">
                             <div class="mb-3">
-                              <label for="formFile" class="form-label">CPF</label>
-                              <input type="" class="form-control" id="exampleFormControlInput1" placeholder="CPF">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row me-2">
-                          <div class="col">
-                            <div class="mb-3">
-                              <label for="formFile" class="form-label">Nome</label>
-                              <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Nome">
-                            </div>
-                          </div>
-                          <div class="col">
-                            <div class="mb-3">
-                              <label for="formFile" class="form-label">Sobrenome</label>
-                              <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Sobrenome">
+                              <label for="cpf" class="form-label">CPF</label>
+                              <input type="number" class="form-control" id="cpf" placeholder="CPF">
                             </div>
                           </div>
                         </div>
                         <div class="row me-2">
                           <div class="col">
                             <div class="mb-3">
-                              <label for="formFile" class="form-label">Gênero</label>
-                              <select class="form-select" aria-label="Status">
-                                <option selected>Gênero</option>
-                                <option value="1">Masculino</option>
-                                <option value="2">Feminino</option>
-                              </select>
+                              <label for="nome" class="form-label">Nome</label>
+                              <input type="text" class="form-control" id="nome" placeholder="Nome">
                             </div>
                           </div>
                           <div class="col">
                             <div class="mb-3">
-                              <label for="formFile" class="form-label">Data de nascimento</label>
-                              <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="Data de nascimento">
+                              <label for="sobrenome" class="form-label">Sobrenome</label>
+                              <input type="text" class="form-control" id="sobrenome" placeholder="Sobrenome">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row me-2">
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="dataValidade" class="form-label">E-mail</label>
+                              <input type="email" class="form-control" id="email" placeholder="E-mail">
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="dataValidade" class="form-label">Data de nascimento</label>
+                              <input type="date" class="form-control" id="dataNascimento" placeholder="Data de nascimento">
                             </div>
                           </div>
                         </div>
@@ -124,33 +120,86 @@
                               <label for="formFile" class="form-label">Status</label>
                               <select class="form-select" aria-label="Status">
                                 <option selected>Status</option>
-                                <option value="1">Ativo</option>
-                                <option value="2">Inativo</option>
+                                <option value="ATIVO">Ativo</option>
+                                <option value="INATIVO">Inativo</option>
                               </select>
                             </div>
                           </div>
                           <div class="col">
-                            
+                            <div class="mb-3">
+                              <label for="genero" class="form-label">Gênero</label>
+                              <select class="form-select" id="genero" aria-label="genero">
+                                <option selected>Selecione o gênero</option>
+                                <option value="M">Masculino</option>
+                                <option value="F">Feminino</option>
+                                <option value="O">Outros</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row me-2">
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Digite a senha</label>
+                              <input type="password" class="form-control  mb-3" id="senha" placeholder="**********">
+                            </div>
+                          </div>
+                          <div class="col">
+
                           </div>
                         </div>
                       </div>
+
+                      <div class="mt-4">
+                        <h3>Telefone</h3>
+                        <div class="row me-2">
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="ipoContato" class="form-label">Tipo</label>
+                              <select class="form-select" id="tipoContato" aria-label="Tipo">
+                                <option selected>Contato</option>
+                                <option value="Telefone">Telefone</option>
+                                <option value="Celular">Celular</option> 
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="ddd" class="form-label">DDD</label>
+                              <input type="number" class="form-control" id="ddd" placeholder="DDD">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row me-2">
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="telefone" class="form-label">Número</label>
+                              <input type="number" class="form-control" id="telefone" placeholder="Número">
+                            </div>
+                          </div>
+                          <div class="col">
+                          </div>
+                        </div>
+                      </div>  
         
                       <div class="mt-4">
                         <h3>Endereço residencial</h3>
                         <div class="row me-2">
                           <div class="col">
                             <div class="mb-3">
-                              <label for="formFile" class="form-label">Nome do Endereço</label>
-                              <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Nome do Endereço">
+                              <label for="nomeEndereco" class="form-label">Nome do Endereço</label>
+                              <input type="text" class="form-control" id="nomeEndereco" placeholder="Nome do Endereço">
                             </div>
                           </div>
                           <div class="col">
                             <div class="mb-3">
-                              <label for="formFile" class="form-label">Tipo de residencia</label>
-                              <select class="form-select" aria-label="Tipo de residencia">
-                                <option value="1">Casa</option>
-                                <option value="2">Apartamento</option>
-                                <option value="2">Outro</option>
+                              <label for="tipoResidencia" class="form-label">Tipo de residencia</label>
+                              <select class="form-select" id="tipoResidencia" aria-label="Tipo de residencia">
+                                <option value="">Tipo de Residencia</option>
+                                <option value="Casa">Casa</option>
+                                <option value="Apartamento">Apartamento</option>
+                                <option value="Sobrado">Sobrado</option>
+                                <option value="Condomínio">Condomínio</option>
                               </select>
                             </div>
                           </div>
@@ -158,18 +207,35 @@
                         <div class="row me-2">
                           <div class="col">
                             <div class="mb-3">
-                              <label for="formFile" class="form-label">CEP</label>
-                              <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="CEP">
+                              <label for="cep" class="form-label">CEP</label>
+                              <input type="number" class="form-control" id="cep" placeholder="CEP">
                             </div>
                           </div>
                           <div class="col">
                             <div class="mb-3">
-                              <label for="formFile" class="form-label">Tipo de logradouro</label>
-                              <select class="form-select" aria-label="Tipo de logradouro">
-                                <option value="1">Rua</option>
-                                <option value="2">Avenida</option>
-                                <option value="2">Estrada</option>
-                                <option value="2">Outro</option>
+                              <label for="tipoLogradouro" class="form-label">Tipo de logradouro</label>
+                              <select class="form-select" id="tipoLogradouro" aria-label="Tipo de logradouro">
+                                <option value="">Tipo de Logradouro</option>
+                                <option value="Rua">Rua</option>
+                                <option value="Avenida">Avenida</option>
+                                <option value="Praça">Praça</option>
+                                <option value="Alameda">Alameda</option>
+                                <option value="Travessa">Travessa</option>
+                                <option value="Estrada">Estrada</option>
+                                <option value="Largo">Largo</option>
+                                <option value="Rodovia">Rodovia</option>
+                                <option value="Beco">Beco</option>
+                                <option value="Viela">Viela</option>
+                                <option value="Boulevard">Boulevard</option>
+                                <option value="Via">Via</option>
+                                <option value="Passagem">Passagem</option>
+                                <option value="Rodoanel">Rodoanel</option>
+                                <option value="Jardim">Jardim</option>
+                                <option value="Ladeira">Ladeira</option>
+                                <option value="Ruela">Ruela</option>
+                                <option value="Caminho">Caminho</option>
+                                <option value="Vereda">Vereda</option>
+                                <option value="Passarela">Passarela</option>
                               </select>
                             </div>
                           </div>
@@ -177,88 +243,63 @@
                         <div class="row me-2">
                           <div class="col">
                             <div class="mb-3">
-                              <label for="formFile" class="form-label">Logradouro</label>
-                              <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Logradouro">
+                              <label for="logradouro" class="form-label">Logradouro</label>
+                              <input type="text" class="form-control" id="logradouro" placeholder="Logradouro">
                             </div>
                           </div>
                           <div class="col">
                             <div class="mb-3">
-                              <label for="formFile" class="form-label">Número</label>
-                              <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Número">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row me-2">
-                          <div class="col">
-                            <div class="mb-3">
-                              <label for="formFile" class="form-label">Bairro</label>
-                              <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Bairro">
-                            </div>
-                          </div>
-                          <div class="col">
-                            <div class="mb-3">
-                              <label for="formFile" class="form-label">Cidade</label>
-                              <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Cidade">
+                              <label for="numero" class="form-label">Número</label>
+                              <input type="number" class="form-control" id="numero" placeholder="Número">
                             </div>
                           </div>
                         </div>
                         <div class="row me-2">
                           <div class="col">
                             <div class="mb-3">
-                              <label for="formFile" class="form-label">Estado</label>
-                              <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Estado">
+                              <label for="bairro" class="form-label">Bairro</label>
+                              <input type="text" class="form-control" id="bairro" placeholder="Bairro">
                             </div>
                           </div>
                           <div class="col">
                             <div class="mb-3">
-                              <label for="formFile" class="form-label">Pais</label>
-                              <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Pais">
+                              <label for="cidade" class="form-label">Cidade</label>
+                              <input type="text" class="form-control" id="cidade" placeholder="Cidade">
                             </div>
                           </div>
                         </div>
                         <div class="row me-2">
                           <div class="col">
                             <div class="mb-3">
-                              <label for="formFile" class="form-label">Observações</label>
-                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                              <label for="estado" class="form-label">Estado</label>
+                              <input type="text" class="form-control" id="estado" placeholder="Estado">
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="pais" class="form-label">Pais</label>
+                              <input type="text" class="form-control" id="pais" placeholder="Pais">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row me-2">
+                          <div class="col">
+                            <div class="mb-3">
+                              <label for="observacoes" class="form-label">Observações</label>
+                              <textarea class="form-control" id="observacoes" rows="2"></textarea>
                             </div>
                           </div>
                         </div>
                       </div>
-        
-                      <div class="mt-4">
-                        <h3>Telefone</h3>
-                        <div class="row me-2">
-                          <div class="col">
-                            <div class="mb-3">
-                              <label for="formFile" class="form-label">Tipo</label>
-                              <select class="form-select" aria-label="Tipo">
-                                <option value="1">Residencial</option>
-                                <option value="2">Celular</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div class="col">
-                            <div class="mb-3">
-                              <label for="formFile" class="form-label">DDD</label>
-                              <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="DDD">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row me-2">
-                          <div class="col">
-                            <div class="mb-3">
-                              <label for="formFile" class="form-label">Número</label>
-                              <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Número">
-                            </div>
-                          </div>
-                          <div class="col">
-                          </div>
-                        </div>
-                      </div>        
+              
                     </form>
                   </div>
-        
+
+                  <div class="buttons mt-12 mb-4" style="margin-top: 24px;">
+                    <button type="submit" class="btn btn-success" onclick="salvarMeusDadosNoBack()">
+                      Salvar
+                    </button>
+                  </div>
                 </section>
               </div>
         </section>
