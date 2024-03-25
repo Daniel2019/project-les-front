@@ -5,7 +5,6 @@ $().ready(function () {
 });
 
 // FUNÇÕES DE INTEGRAÇÃO COM O BACK-END
-
 function consultarCartoesCadastrados(){
 
     const url = "http://localhost:8080/formaPagamentos/listar";
@@ -35,6 +34,7 @@ function consultarCartoesCadastrados(){
         alert("Erro na rota");
         adicionarDivDeNenhumCartao();
     });
+
 }
 
 function salvarCartaoNoBack(posicaoDaDivDoCartao){
@@ -132,6 +132,7 @@ function deletarCartao(idDoCartao) {
         })
 
     }
+
 }
 
 // FUNÇÕES DE DIV
@@ -224,6 +225,7 @@ function adicionarDivDeNovoCartao() {
     `;
 
     $("#listaDeCartoes").append(html);
+
 }
 
 function adicionarDivDeExistenteCartao(idDoCartao) {
@@ -311,6 +313,7 @@ function adicionarDivDeExistenteCartao(idDoCartao) {
     `;
 
     $("#listaDeCartoes").append(html);
+
 }
 
 function adicionarDivDeNenhumCartao() {
@@ -324,6 +327,7 @@ function adicionarDivDeNenhumCartao() {
     `;
 
     $("#listaDeCartoes").append(html);
+
 }
 
 function deletarCartaoNaoCadastrado(posicaoDaDivDoCartao) {
