@@ -1,0 +1,59 @@
+[
+  {
+    "nomeEndereco": "Endereco residencial",
+    "tipoEndereco": "RESIDENCIAL",
+    "tipoResidencia": "Casa",
+    "cep": "08555140",
+    "logradouro": "Sapucaí",
+    "tipoLogradouro": "Rua",
+    "numero": 104,
+    "bairro": "Jardim Santa Luiza",
+    "cidade": {
+      "nome": "Poá",
+      "estado": {
+        "nome": "São Paulo",
+        "sigla": "SP",
+        "pais": "Brasil"
+      }
+    },
+    "observacoes": "Minha casa"
+  },
+  {
+    "nomeEndereco": "Endereco Comercial",
+    "tipoEndereco": "Comercial",
+    "tipoResidencia": "Apartamento",
+    "cep": "08565-520",
+    "logradouro": " Paulista",
+    "tipoLogradouro": "Avenida",
+    "numero": 104,
+    "bairro": "Bela Vista",
+    "cidade": {
+      "nome": "São Paulo",
+      "estado": {
+        "nome": "São Paulo",
+        "sigla": "SP",
+        "pais": "Brasil"
+      }
+    },
+    "observacoes": "Escritorio da empresa"
+  },
+  {
+    "nomeEndereco": "Endereco Comercial 2",
+    "tipoEndereco": "Outro",
+    "tipoResidencia": "Apartamento",
+    "cep": "08565-520",
+    "logradouro": " Vergueiro",
+    "tipoLogradouro": "Travessa",
+    "numero": 485,
+    "bairro": "Bela Vista",
+    "cidade": {
+      "nome": "São Paulo",
+      "estado": {
+        "nome": "São Paulo",
+        "sigla": "SP",
+        "pais": "Brasil"
+      }
+    },
+    "observacoes": "Escritorio da empresa"
+  }
+]
