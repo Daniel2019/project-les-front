@@ -1,3 +1,5 @@
+const idCliente = 45;
+
 $().ready(function () {
     consultarMeusDados();
 });
@@ -5,31 +7,29 @@ $().ready(function () {
 // FUNÇÕES DE INTEGRAÇÃO COM O BACK-END
 function consultarMeusDados(){
 
-    const url = "http://localhost:8080/clientes/listar/1";
+    const url = `http://localhost:8080/clientes/listar/${idCliente}`;
 
     fetch(url, {
         method: 'GET'
     }).then(response => {
         return response.json();
     }).then(data => {
-        if(data.length == 0){
-            adicionarDivDeNenhumCartao();
-            return;
-        }
 
         const cliente = data;
+        $("#nomeUsuario").append(`<strong>${cliente.nome}</strong>`)
 
         $("#id").val(cliente.id);
         $("#nome").val(cliente.nome);
         $("#sobrenome").val(cliente.sobrenome);
         $("#email").val(cliente.email);
-        $("#dataNascimento").val(1);
+        $("#dataNascimento").val(cliente.dataNascimento);
         $("#cpf").val(cliente.cpf);
-        $("#genero").val(1);
+        $("#genero").val(cliente.genero);
         $("#senha").val(cliente.senha);
-        $("#tipoContato").val(1);
-        $("#ddd").val();
-        $("#telefone").val(1);
+        $("#tipoContato").val(cliente.tipoContato);
+        $("#ddd").val(cliente.ddd);
+        $("#telefone").val(cliente.numeroTelefone);
+        $("#status").val(cliente.status)
 
         cliente.enderecosEntrega.map((endereco) => {
 
@@ -50,34 +50,14 @@ function consultarMeusDados(){
         });
 
     }).catch(error => {
-        $("#nome").val(1);
-        $("#sobrenome").val(1);
-        $("#email").val(1);
-        $("#dataNascimento").val(1);
-        $("#cpf").val(1);
-        $("#genero").val(1);
-        $("#senha").val(1);
-        $("#tipoContato").val(1);
-        $("#ddd").val(1);
-        $("#telefone").val(1);
-        $("#nomeEndereco").val(1);
-        $("#tipoResidencia").val(1);
-        $("#cep").val(1);
-        $("#logradouro").val(1);
-        $("#tipoLogradouro").val(1);
-        $("#numero").val(1);
-        $("#bairro").val(1);
-        $("#cidade").val(1);
-        $("#estado").val(1);
-        $("#pais").val(1);
-        $("#observacoes").val(1);
+        alert(error);
     });
 
 }
 
 function salvarMeusDadosNoBack(){
 
-    const id = 1;
+    const id = $("#id").val();
     const nome = $("#nome").val();
     const sobrenome = $("#sobrenome").val();
     const email = $("#email").val();
@@ -85,19 +65,12 @@ function salvarMeusDadosNoBack(){
     const cpf = $("#cpf").val();
     const genero = $("#genero").val();
     const senha = $("#senha").val();
+    const status = $("#status").val();
 
     const tipoContato = $("#tipoContato").val();
     const ddd = $("#ddd").val();
     const numero = $("#telefone").val();
 
-    const telefone = {
-        id: 1,
-        tipoContato: tipoContato,
-        ddd: ddd,
-        numero: numero
-    }
-
-    const nomeEndereco = $("#nomeEndereco").val();
     const tipoResidencia = $("#tipoResidencia").val();
     const cep = $("#cep").val();
     const logradouro= $("#logradouro").val();
@@ -110,7 +83,7 @@ function salvarMeusDadosNoBack(){
     const observacoes = $("#observacoes").val();
 
     const endereco = {
-        id: 1,
+        id: id,
         nomeEndereco: "Meu endereço residencial",
         tipoEndereco: "RESIDENCIAL",
         tipoResidencia: tipoResidencia,
@@ -127,7 +100,7 @@ function salvarMeusDadosNoBack(){
             },
         },
         cliente: {
-            id: 1
+            id: idCliente
         },
         observacoes: observacoes
     }
@@ -140,25 +113,30 @@ function salvarMeusDadosNoBack(){
         dataNascimento: dataNascimento,
         cpf: cpf,
         genero: genero,
-        status: "ATIVO",
+        status: status,
         senha: senha,
-        telefone: telefone,
-        endereco: endereco 
+        tipoContato: tipoContato,
+        ddd: parseInt(ddd),
+        numeroTelefone: parseInt(numero),
+        telefone: telefone
     }
 
-    // const url = `http://localhost:8080/clientes/atualizar/1`;
+    const url = `http://localhost:8080/clientes/atualizar/${id}`;
 
-    // fetch(url, {
-    //     method: 'PUT',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(modeloJSON)
-    // }).then(response => {
-    //     return response.text();
-    // }).then(data => {
-    //     alert(data);       
-    // })
+    fetch(url, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(modeloJSON)
+    }).then(response => {
+        return response.text();
+    }).then(data => {
+        alert(data);
+        window.location.reload();      
+    }).catch(error => {
+        alert(error);
+    });
 
     console.log(modeloJSON);
     

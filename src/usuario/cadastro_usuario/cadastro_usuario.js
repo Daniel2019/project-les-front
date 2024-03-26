@@ -14,12 +14,6 @@ function salvarClienteNoBack(){
     const ddd = $("#ddd").val();
     const numero = $("#telefone").val();
 
-    const telefone = {
-        tipoContato: tipoContato,
-        ddd: ddd,
-        numero: numero
-    }
-
     const tipoResidencia = $("#tipoResidencia").val();
     const cep = $("#cep").val();
     const logradouro= $("#logradouro").val();
@@ -37,16 +31,20 @@ function salvarClienteNoBack(){
         cep: cep,
         logradouro: logradouro,
         tipoLogradouro: tipoLogradouro,
-        numero: numeroEndereco,
+        numero: parseInt(numeroEndereco),
         bairro: bairro,
         cidade: {
-            nome: nomeCidade,
+            id: 1,
+            nome: "Amapa",
             estado: {
-                sigla: siglaEstado
-            },
+              id: 1,
+              nome: "Amapa",
+              sigla: "AP",
+              pais: "Brasil"
+            }
         },
         cliente: {
-
+            id: 14
         },
         observacoes: observacoes
     }
@@ -58,25 +56,32 @@ function salvarClienteNoBack(){
         dataNascimento: dataNascimento,
         cpf: cpf,
         genero: genero,
-        status: "ATIVO",
+        status: "Ativo",
         senha: senha,
-        telefone: telefone,
-        endereco: endereco,
+        tipoContato: tipoContato,
+        ddd: parseInt(ddd),
+        numeroTelefone: parseInt(numero),
+        enderecoEntrega: [endereco],
     }
 
-    // const url = `http://localhost:8080/clientes/cadastrar`;
+    const url = `http://localhost:8080/clientes/cadastrar`;
 
-    // fetch(url, {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(modeloJSON)
-    // }).then(response => {
-    //     return response.text();
-    // }).then(data => {
-    //     alert(data);       
-    // })
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(modeloJSON)
+    }).then(response => {
+        return response.text();
+    }).then(data => {
+        alert(data);
+        if(data == "Cliente cadastrado"){
+            voltar();
+        }
+    }).catch(error => {
+        alert("Erro na rota");
+    });
 
     console.log(modeloJSON);
     

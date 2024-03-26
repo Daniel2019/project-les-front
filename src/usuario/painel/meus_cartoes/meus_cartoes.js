@@ -1,13 +1,32 @@
 var quantidadeDeCartoes = 0;
+const idCliente = 45;
 
 $().ready(function () {
-    consultarCartoesCadastrados();
+    consultarMeusDados()
 });
 
 // FUNÇÕES DE INTEGRAÇÃO COM O BACK-END
+function consultarMeusDados(){
+
+    const url = `http://localhost:8080/clientes/listar/${idCliente}`;
+
+    fetch(url, {
+        method: 'GET'
+    }).then(response => {
+        return response.json();
+    }).then(data => {
+        const cliente = data;
+        $("#nomeUsuario").append(`<strong>${cliente.nome}</strong>`);
+        consultarCartoesCadastrados();
+    }).catch(error => {
+        alert(error);
+    });
+
+}
+
 function consultarCartoesCadastrados(){
 
-    const url = "http://localhost:8080/formaPagamentos/listar";
+    const url = `http://localhost:8080/formaPagamentos/listar/cliente/${idCliente}`;
 
     fetch(url, {
         method: 'GET'
@@ -54,7 +73,10 @@ function salvarCartaoNoBack(posicaoDaDivDoCartao){
         dataValidade: validade,
         nomeTitular: nomeTitular,
         cpf: cpf,
-        observacoes: observacoes
+        observacoes: observacoes,
+        cliente: {
+            id: idCliente
+        }
     }
 
     const url = "http://localhost:8080/formaPagamentos/cadastrar";
@@ -92,7 +114,10 @@ function atualizarCartaoNoBack(posicaoDaDivDoCartao, idDoCartao){
         dataValidade: validade,
         nomeTitular: nomeTitular,
         cpf: cpf,
-        observacoes: observacoes
+        observacoes: observacoes,
+        cliente: {
+            id: idCliente
+        }
     }
 
     const url = `http://localhost:8080/formaPagamentos/atualizar/${idDoCartao}`;

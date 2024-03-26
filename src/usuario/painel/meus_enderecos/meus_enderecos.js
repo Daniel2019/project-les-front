@@ -1,11 +1,30 @@
 let quantidadeDeEndereco = 0;
+const idDoCliente = 45
 
 $().ready(function () {
-  consultarMeusEnderecos();
+  consultarMeusDados();
 });
 
+function consultarMeusDados(){
+
+  const url = `http://localhost:8080/clientes/listar/${idDoCliente}`;
+
+  fetch(url, {
+      method: 'GET'
+  }).then(response => {
+      return response.json();
+  }).then(data => {
+      const cliente = data;
+      $("#nomeUsuario").append(`<strong>${cliente.nome}</strong>`);
+      consultarMeusEnderecos();
+  }).catch(error => {
+      alert(error);
+  });
+
+}
+
 function consultarMeusEnderecos() {
-  const url = "http://localhost:8080/enderecos/listar";
+  const url = `http://localhost:8080/enderecos/listar/cliente/${idDoCliente}`;
 
   fetch(url, {
     method: 'GET'
@@ -22,10 +41,10 @@ function consultarMeusEnderecos() {
       adicionarDivDeEnderecoExistente(endereco.id, endereco.nomeEndereco);
 
       $(`#nomeEndereco${quantidadeDeEndereco}`).val(endereco.nomeEndereco);
-      $(`#tipoResidencia${quantidadeDeEndereco}`).val(1);
+      $(`#tipoResidencia${quantidadeDeEndereco}`).val(endereco.tipoResidencia);
       $(`#cep${quantidadeDeEndereco}`).val(endereco.cep);
       $(`#logradouro${quantidadeDeEndereco}`).val(endereco.logradouro);
-      $(`#tipoLogradouro${quantidadeDeEndereco}`).val(1);
+      $(`#tipoLogradouro${quantidadeDeEndereco}`).val(endereco.tipoLogradouro);
       $(`#numero${quantidadeDeEndereco}`).val(endereco.numero);
       $(`#bairro${quantidadeDeEndereco}`).val(endereco.bairro);
       $(`#cidade${quantidadeDeEndereco}`).val(endereco.cidade.nome);
@@ -96,7 +115,7 @@ function salvarEnderecoNoBack(posicaoDaDivDoEndereco) {
       }
     },
     cliente: {
-      id: 1
+      id: idDoCliente
     },
     observacoes: observacoes
   }
@@ -175,7 +194,7 @@ function atualizarEnderecoNoBack(posicaoDaDivDoEndereco, idDoEndereco) {
       }
     },
     cliente: {
-      id: 1
+      id: idDoCliente
     },
     observacoes: observacoes
   }
