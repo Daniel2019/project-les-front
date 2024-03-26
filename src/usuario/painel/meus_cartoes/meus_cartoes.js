@@ -47,7 +47,7 @@ function salvarCartaoNoBack(posicaoDaDivDoCartao){
     const cpf = $(`#cpf${posicaoDaDivDoCartao}`).val();
     const observacoes = $(`#observacoes${posicaoDaDivDoCartao}`).val();
 
-    const modeloJson = {
+    const modeloJSON = {
         numeroCartao: parseInt(numeroCartao),
         marcaCartao: marca,
         cvc: parseInt(cvc),
@@ -64,7 +64,7 @@ function salvarCartaoNoBack(posicaoDaDivDoCartao){
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(modeloJson)
+        body: JSON.stringify(modeloJSON)
     }).then(response => {
         return response.text();
     }).then(data => {
@@ -84,7 +84,7 @@ function atualizarCartaoNoBack(posicaoDaDivDoCartao, idDoCartao){
     const cpf = $(`#cpf${posicaoDaDivDoCartao}`).val();
     const observacoes = $(`#observacoes${posicaoDaDivDoCartao}`).val();
 
-    const modeloJson = {
+    const modeloJSON = {
         id: parseInt(idDoCartao),
         numeroCartao: parseInt(numeroCartao),
         marcaCartao: marca,
@@ -102,7 +102,7 @@ function atualizarCartaoNoBack(posicaoDaDivDoCartao, idDoCartao){
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(modeloJson)
+        body: JSON.stringify(modeloJSON)
     }).then(response => {
         return response.text();
     }).then(data => {
