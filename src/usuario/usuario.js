@@ -1,6 +1,9 @@
-const idDoCliente = 45;
+let idDoCliente = 0;
 
 $().ready(function () {
+
+    idDoCliente = sessionStorage.getItem("idDoCliente");
+
     consultarMeusDados();
 });
 

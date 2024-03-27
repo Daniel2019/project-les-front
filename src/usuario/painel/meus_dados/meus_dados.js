@@ -1,13 +1,18 @@
-const idCliente = 45;
+let idDoCliente = 0;
+let idDoEndereco = 0;
 
 $().ready(function () {
+
+    
+    idDoCliente = sessionStorage.getItem("idDoCliente");
+
     consultarMeusDados();
 });
 
 // FUNÇÕES DE INTEGRAÇÃO COM O BACK-END
 function consultarMeusDados(){
 
-    const url = `http://localhost:8080/clientes/listar/${idCliente}`;
+    const url = `http://localhost:8080/clientes/listar/${idDoCliente}`;
 
     fetch(url, {
         method: 'GET'
@@ -34,15 +39,16 @@ function consultarMeusDados(){
         cliente.enderecosEntrega.map((endereco) => {
 
             if(endereco.tipoEndereco == "RESIDENCIAL"){
+                idDoEndereco = endereco.id
                 $("#nomeEndereco").val(endereco.nomeEndereco);
-                $("#tipoResidencia").val(1);
+                $("#tipoResidencia").val(endereco.tipoResidencia);
                 $("#cep").val(endereco.cep);
                 $("#logradouro").val(endereco.logradouro);
-                $("#tipoLogradouro").val(1);
+                $("#tipoLogradouro").val(endereco.tipoLogradouro);
                 $("#numero").val(endereco.numero);
                 $("#bairro").val(endereco.bairro);
-                $("#cidade").val(endereco.cidade.nome);
-                $("#estado").val(endereco.cidade.estado.nome);
+                $("#cidade").val(endereco.cidade.nome); 
+                $("#estado").val(endereco.cidade.estado.sigla);
                 $("#pais").val(endereco.cidade.estado.pais);
                 $("#observacoes").val(endereco.observacoes);
             }
@@ -83,7 +89,7 @@ function salvarMeusDadosNoBack(){
     const observacoes = $("#observacoes").val();
 
     const endereco = {
-        id: id,
+        id: idDoEndereco,
         nomeEndereco: "Meu endereço residencial",
         tipoEndereco: "RESIDENCIAL",
         tipoResidencia: tipoResidencia,
@@ -95,12 +101,10 @@ function salvarMeusDadosNoBack(){
         cidade: {
             nome: nomeCidade,
             estado: {
-                sigla: siglaEstado,
-                pais: pais
+                sigla: siglaEstado
             },
         },
         cliente: {
-            id: idCliente
         },
         observacoes: observacoes
     }
@@ -118,7 +122,7 @@ function salvarMeusDadosNoBack(){
         tipoContato: tipoContato,
         ddd: parseInt(ddd),
         numeroTelefone: parseInt(numero),
-        telefone: telefone
+        enderecosEntrega: [endereco],
     }
 
     const url = `http://localhost:8080/clientes/atualizar/${id}`;

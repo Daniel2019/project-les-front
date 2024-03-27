@@ -34,17 +34,13 @@ function salvarClienteNoBack(){
         numero: parseInt(numeroEndereco),
         bairro: bairro,
         cidade: {
-            id: 1,
-            nome: "Amapa",
+            nome: nomeCidade,
             estado: {
-              id: 1,
-              nome: "Amapa",
-              sigla: "AP",
-              pais: "Brasil"
+              sigla: siglaEstado,
             }
         },
         cliente: {
-            id: 14
+            id: 0
         },
         observacoes: observacoes
     }
@@ -61,7 +57,7 @@ function salvarClienteNoBack(){
         tipoContato: tipoContato,
         ddd: parseInt(ddd),
         numeroTelefone: parseInt(numero),
-        enderecoEntrega: [endereco],
+        enderecosEntrega: [endereco],
     }
 
     const url = `http://localhost:8080/clientes/cadastrar`;

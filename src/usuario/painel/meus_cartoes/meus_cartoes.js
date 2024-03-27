@@ -1,14 +1,15 @@
 var quantidadeDeCartoes = 0;
-const idCliente = 45;
+let idDoCliente = 0;
 
 $().ready(function () {
+    idDoCliente = sessionStorage.getItem("idDoCliente");
     consultarMeusDados()
 });
 
 // FUNÇÕES DE INTEGRAÇÃO COM O BACK-END
 function consultarMeusDados(){
 
-    const url = `http://localhost:8080/clientes/listar/${idCliente}`;
+    const url = `http://localhost:8080/clientes/listar/${idDoCliente}`;
 
     fetch(url, {
         method: 'GET'
@@ -26,7 +27,7 @@ function consultarMeusDados(){
 
 function consultarCartoesCadastrados(){
 
-    const url = `http://localhost:8080/formaPagamentos/listar/cliente/${idCliente}`;
+    const url = `http://localhost:8080/formaPagamentos/listar/cliente/${idDoCliente}`;
 
     fetch(url, {
         method: 'GET'
@@ -75,7 +76,7 @@ function salvarCartaoNoBack(posicaoDaDivDoCartao){
         cpf: cpf,
         observacoes: observacoes,
         cliente: {
-            id: idCliente
+            id: idDoCliente
         }
     }
 
@@ -116,7 +117,7 @@ function atualizarCartaoNoBack(posicaoDaDivDoCartao, idDoCartao){
         cpf: cpf,
         observacoes: observacoes,
         cliente: {
-            id: idCliente
+            id: idDoCliente
         }
     }
 

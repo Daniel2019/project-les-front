@@ -1,24 +1,27 @@
 let quantidadeDeEndereco = 0;
-const idDoCliente = 45
+let idDoCliente = 0;
 
 $().ready(function () {
+
+  idDoCliente = sessionStorage.getItem("idDoCliente");
+
   consultarMeusDados();
 });
 
-function consultarMeusDados(){
+function consultarMeusDados() {
 
   const url = `http://localhost:8080/clientes/listar/${idDoCliente}`;
 
   fetch(url, {
-      method: 'GET'
+    method: 'GET'
   }).then(response => {
-      return response.json();
+    return response.json();
   }).then(data => {
-      const cliente = data;
-      $("#nomeUsuario").append(`<strong>${cliente.nome}</strong>`);
-      consultarMeusEnderecos();
+    const cliente = data;
+    $("#nomeUsuario").append(`<strong>${cliente.nome}</strong>`);
+    consultarMeusEnderecos();
   }).catch(error => {
-      alert(error);
+    alert(error);
   });
 
 }
@@ -48,7 +51,7 @@ function consultarMeusEnderecos() {
       $(`#numero${quantidadeDeEndereco}`).val(endereco.numero);
       $(`#bairro${quantidadeDeEndereco}`).val(endereco.bairro);
       $(`#cidade${quantidadeDeEndereco}`).val(endereco.cidade.nome);
-      $(`#estado${quantidadeDeEndereco}`).val(endereco.cidade.estado.nome);
+      $(`#estado${quantidadeDeEndereco}`).val(endereco.cidade.estado.sigla);
       $(`#pais${quantidadeDeEndereco}`).val(endereco.cidade.estado.pais);
       $(`#observacoes${quantidadeDeEndereco}`).val(endereco.observacoes);
 
@@ -73,28 +76,6 @@ function salvarEnderecoNoBack(posicaoDaDivDoEndereco) {
   const pais = $(`#pais${posicaoDaDivDoEndereco}`).val();
   const observacoes = $(`#observacoes${posicaoDaDivDoEndereco}`).val();
 
-  // const endereco = {
-  //   nomeEndereco: nomeEndereco,
-  //   tipoEndereco: "ENTREGA",
-  //   tipoResidencia: tipoResidencia,
-  //   cep: cep,
-  //   logradouro: logradouro,
-  //   tipoLogradouro: tipoLogradouro,
-  //   numero: numeroEndereco,
-  //   bairro: bairro,
-  //   cidade: {
-  //     nome: nomeCidade,
-  //     estado: {
-  //       sigla: siglaEstado,
-  //       pais: pais
-  //     },
-  //   },
-  //   cliente: {
-  //     id: 1
-  //   },
-  //   observacoes: observacoes
-  // }
-
   const modeloJSON = {
     nomeEndereco: nomeEndereco,
     tipoEndereco: "ENTREGA",
@@ -105,13 +86,9 @@ function salvarEnderecoNoBack(posicaoDaDivDoEndereco) {
     numero: numeroEndereco,
     bairro: bairro,
     cidade: {
-      id: 1,
-      nome: "Amapa",
+      nome: nomeCidade,
       estado: {
-        id: 1,
-        nome: "Amapa",
-        sigla: "AP",
-        pais: "Brasil"
+        sigla: siglaEstado,
       }
     },
     cliente: {
@@ -151,28 +128,6 @@ function atualizarEnderecoNoBack(posicaoDaDivDoEndereco, idDoEndereco) {
   const pais = $(`#pais${posicaoDaDivDoEndereco}`).val();
   const observacoes = $(`#observacoes${posicaoDaDivDoEndereco}`).val();
 
-  // const endereco = {
-  //   nomeEndereco: nomeEndereco,
-  //   tipoEndereco: "ENTREGA",
-  //   tipoResidencia: tipoResidencia,
-  //   cep: cep,
-  //   logradouro: logradouro,
-  //   tipoLogradouro: tipoLogradouro,
-  //   numero: numeroEndereco,
-  //   bairro: bairro,
-  //   cidade: {
-  //     nome: nomeCidade,
-  //     estado: {
-  //       sigla: siglaEstado,
-  //       pais: pais
-  //     },
-  //   },
-  //   cliente: {
-  //     id: 1
-  //   },
-  //   observacoes: observacoes
-  // }
-
   const modeloJSON = {
     id: idDoEndereco,
     nomeEndereco: nomeEndereco,
@@ -184,13 +139,9 @@ function atualizarEnderecoNoBack(posicaoDaDivDoEndereco, idDoEndereco) {
     numero: numeroEndereco,
     bairro: bairro,
     cidade: {
-      id: 1,
-      nome: "Amapa",
+      nome: nomeCidade,
       estado: {
-        id: 1,
-        nome: "Amapa",
-        sigla: "AP",
-        pais: "Brasil"
+        sigla: siglaEstado,
       }
     },
     cliente: {
@@ -254,6 +205,11 @@ function adicionarDivDeNenhumEndereco() {
 }
 
 function adicionarNovaDivEndereco() {
+
+  if (quantidadeDeEndereco == 0) {
+    $("#listaDeEnderecos").empty();
+  }
+
   quantidadeDeEndereco = quantidadeDeEndereco + 1;
   let html = `
     <div class="card mt-4" id="divEndereco${quantidadeDeEndereco}">
@@ -344,7 +300,36 @@ function adicionarNovaDivEndereco() {
             <div class="col">
               <div class="mb-3">
                 <label for="estado${quantidadeDeEndereco}" class="form-label">Estado</label>
-                <input type="text" class="form-control" id="estado${quantidadeDeEndereco}" placeholder="Estado">
+                <select name="estado" id="estado${quantidadeDeEndereco}" class="form-select mb-3">
+                  <option value="">Estado</option>
+                  <option value="AC">AC</option>
+                  <option value="AL">AL</option>
+                  <option value="AP">AP</option>
+                  <option value="AM">AM</option>
+                  <option value="BA">BA</option>
+                  <option value="CE">CE</option>
+                  <option value="ES">ES</option>
+                  <option value="GO">GO</option>
+                  <option value="MA">MA</option>
+                  <option value="MT">MT</option>
+                  <option value="MS">MS</option>
+                  <option value="MG">MG</option>
+                  <option value="PA">PA</option>
+                  <option value="PB">PB</option>
+                  <option value="PR">PR</option>
+                  <option value="PE">PE</option>
+                  <option value="PI">PI</option>
+                  <option value="RJ">RJ</option>
+                  <option value="RN">RN</option>
+                  <option value="RS">RS</option>
+                  <option value="RO">RO</option>
+                  <option value="RR">RR</option>
+                  <option value="SC">SC</option>
+                  <option value="SP">SP</option>
+                  <option value="SE">SE</option>
+                  <option value="TO">TO</option>
+                  <option value="DF">DF</option>
+                </select>
               </div>
             </div>
             <div class="col">
@@ -470,7 +455,36 @@ function adicionarDivDeEnderecoExistente(idDoEndereco, nomeEndereco) {
             <div class="col">
               <div class="mb-3">
                 <label for="estado${quantidadeDeEndereco}" class="form-label">Estado</label>
-                <input type="text" class="form-control" id="estado${quantidadeDeEndereco}" placeholder="Estado">
+                <select name="estado" id="estado${quantidadeDeEndereco}" class="form-select mb-3">
+                  <option value="">Estado</option>
+                  <option value="AC">AC</option>
+                  <option value="AL">AL</option>
+                  <option value="AP">AP</option>
+                  <option value="AM">AM</option>
+                  <option value="BA">BA</option>
+                  <option value="CE">CE</option>
+                  <option value="ES">ES</option>
+                  <option value="GO">GO</option>
+                  <option value="MA">MA</option>
+                  <option value="MT">MT</option>
+                  <option value="MS">MS</option>
+                  <option value="MG">MG</option>
+                  <option value="PA">PA</option>
+                  <option value="PB">PB</option>
+                  <option value="PR">PR</option>
+                  <option value="PE">PE</option>
+                  <option value="PI">PI</option>
+                  <option value="RJ">RJ</option>
+                  <option value="RN">RN</option>
+                  <option value="RS">RS</option>
+                  <option value="RO">RO</option>
+                  <option value="RR">RR</option>
+                  <option value="SC">SC</option>
+                  <option value="SP">SP</option>
+                  <option value="SE">SE</option>
+                  <option value="TO">TO</option>
+                  <option value="DF">DF</option>
+                </select>
               </div>
             </div>
             <div class="col">
